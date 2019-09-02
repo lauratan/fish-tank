@@ -2,7 +2,7 @@ class Fish extends Denizen {
 
   constructor(options) {
     super(options);
-    this.imageUri = '/images/fish01.png';
+    this.imageUri = '/images/magikarp.gif';
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = true;
