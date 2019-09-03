@@ -1,11 +1,27 @@
 class FloorLife extends Denizen {
-
   constructor(options) {
     super(options);
-    this.imageUri = '/images/magikarp.gif';
+    this.imageUri = '/images/pyukumuku.gif';
+    this.position.y += this.height - 50;
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
-    this.isTasty = true;
+  }
+
+  onClick() {
+    console.log('im a floor life');
+    console.log(this.tank.getBounds());
+
+  }
+
+  update(t) {
+    // if you're out of bounds, despawn
+    if (this.outOfBounds(this.tank.getBounds())) {
+      console.log('dont kill');
+    } else {
+      for (var i = 0; i < this.calcPhysicsTicks(t); i++) {
+        this.updateOneTick();
+      }
+    }
   }
 
   generateSwimVelocity(max, min) {
@@ -14,6 +30,7 @@ class FloorLife extends Denizen {
     }
     var newSpeed = new Vector(randRangeInt(-max, max), randRangeInt(-max / 2, max / 2));
     while (min && newSpeed.magnitude() < min) {
+      console.log('here');
       newSpeed = new Vector(randRangeInt(-max, max), randRangeInt(-max / 2, max / 2));
     }
     return newSpeed;

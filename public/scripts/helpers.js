@@ -44,6 +44,36 @@ class Vector {
   }
 
   addMut(vector) {
+    if (this.x + vector.x > 750) {
+      // this.x = -500
+      // this.y = 500
+    }
+    if (this.y + vector.y > window.innerHeight) {
+      console.log('max width', window.innerWidth)
+      console.log(this.x, this.y);
+      console.log('going back!');
+      this.x = 500
+      this.y = 500
+    }
+    if (this.x + vector.x < -750) {
+      // console.log('-750');
+      // this.x = -500
+      // this.y = 500
+    }
+    if (this.y + vector.y < -10) {
+      console.log('-750');
+      this.x = -500
+      this.y = 500
+    }
+    // if ((this.x + vector.x > window.innerWidth)(this.y + vector.y > window.innerHeight)) {
+    //   this.x = 500
+    //   this.y = 500
+    // }
+    // if ((this.x + vector.x < -window.innerWidth) || (this.y + vector.y < -window.innerHeight)){
+    //   this.x = 500
+    //   this.y = 500
+    // }
+
     this.x += vector.x;
     this.y += vector.y;
   }

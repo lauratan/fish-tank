@@ -13,7 +13,6 @@ class Starter extends Denizen {
   }
 
   onClick(event) {
-    console.log(this.position);
     const seedPosition = new Vector(0, 200);
     var xVel = randRangeInt(-300, 300);
     var yVel = 400 - Math.abs(xVel);

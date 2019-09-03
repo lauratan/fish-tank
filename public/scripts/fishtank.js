@@ -114,7 +114,7 @@ class Fishtank {
       minX: - window.innerWidth / 2,
       maxX: window.innerWidth / 2,
       minY: -10,
-      maxY: window.innerHeight - 10,
+      maxY: window.innerHeight - 100,
     };
   }
 
